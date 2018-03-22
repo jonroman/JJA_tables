@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jonny-app">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Javascript exercises</title>
+
+  <!-- JQUERY CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Boostrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- ANGULARjs -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+</head>
+<body>
+
+  <h1>Plain Javascript</h1>
+    <table id="table_1" class="">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td></td>       
+        <td>
+          <input id="name_1" type="text"  placeholder="Name"></input>
+        </td>
+        <td>
+          <input id="address_1" type="text"  placeholder="Address"></input>
+        </td>
+        <td>
+            <input id="email_1" type="email"  placeholder="joe@hotmail.com"></input>
+        </td>        
+        <td>
+            <input id="password_1" type="password"  placeholder="password"></input>
+        </td>
+        <td><button onclick="addUser()">Add</button></td>
+      </tr>
+    </table>
+
+  <hr />
+  
+
+  <h1>JQUERY</h1>
+  <h3>featuring bootstrap 4</h3>
+  <table id="table_2" class="table table-primary">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td></td>       
+      <td>
+        <input id="name_2" class="form-control" type="text"  placeholder="Name"></input>
+      </td>
+      <td>
+        <input id="address_2" class="form-control" type="text"  placeholder="Address"></input>
+      </td>
+      <td>
+          <input id="email_2" class="form-control" type="email"  placeholder="joe@hotmail.com"></input>
+      </td>        
+      <td>
+          <input id="password_2" class="form-control" type="password"  placeholder="password"></input>
+        </td>
+      <td><button id="add_user" class="btn btn-sm btn-success">Add</button></td>
+    </tr>
+  </table>
+
+  <hr />
+
+  <!-- Angualar -->
+  <div id="SPA" ng-controller="iron-man-controller">
+    <h1>{{title}}</h1>
+    <h3>{{subtitle}}</h3>
+    <table class="table table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td></td>       
+            <td>
+              <input ng-model="name" class="form-control" type="text"  placeholder="Name"></input>
+            </td>
+            <td>
+              <input ng-model="address" class="form-control" type="text"  placeholder="Address"></input>
+            </td>
+            <td>
+                <input ng-model="email" class="form-control" type="email"  placeholder="joe@hotmail.com"></input>
+            </td>        
+            <td>
+                <input ng-model="password" class="form-control" type="password"  placeholder="password"></input>
+              </td>
+            <td><button ng-click="addUser()" class="btn btn-sm btn-info">Add</button></td>
+          </tr>
+          <tr ng-repeat="user in users">
+           <td>{{ user.id }}</td>
+           <td>{{ user.name }}</td>
+           <td>{{ user.address }}</td>
+           <td>{{ user.email }}</td>
+           <td>{{ user.password }}</td>
+           <td><button ng-click="deleteUser(user.id)" class="btn btn-sm btn-warning">Delete</td>            
+          </tr>
+    </table>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>
+
+<!-- import the javascript file -->
+<script type="text/javascript" src="users.js"></script>
+<script type="text/javascript" src="jquery_users.js"></script>
+<script type="text/javascript" src="ng_users.js"></script>
