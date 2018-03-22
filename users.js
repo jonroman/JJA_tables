@@ -73,21 +73,19 @@ function _createTR(table_1, user) {
   var td_password;
   var td_delete;
   var row = table_1.insertRow(-1);
-  td_id = row.insertCell(0);
-  td_id.innerHTML = user.id;
 
-  td_name = row.insertCell(1);
+  td_name = row.insertCell(0);
   td_name.innerHTML = user.name;
 
-  td_address = row.insertCell(2);
+  td_address = row.insertCell(1);
   td_address.innerHTML = user.address;
   
-  td_email = row.insertCell(3);
+  td_email = row.insertCell(2);
   td_email.innerHTML = user.email;
 
-  td_password = row.insertCell(4);
+  td_password = row.insertCell(3);
   td_password.innerHTML = user.password;
 
-  td_delete = row.insertCell(5);
+  td_delete = row.insertCell(4);
   td_delete.innerHTML = '<button onclick="deleteUser(this, '+user.id+')">Delete</button>';
 }

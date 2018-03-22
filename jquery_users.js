@@ -59,7 +59,6 @@ $(document).ready(function() {
 
   function appendRowJQ(user) {
     var tr = '<tr id="tr_'+user.id+'">';
-    tr += "<td>"+user.id+"</td>";
     tr += "<td>"+user.name+"</td>";
     tr += "<td>"+user.address+"</td>";
     tr += "<td>"+user.email+"</td>";

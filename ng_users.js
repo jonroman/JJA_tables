@@ -27,22 +27,29 @@ app.controller('iron-man-controller', function($scope) {
 
   $scope.addUser = function() {
 
-    // if (name.length == 0 || address.length == 0 || email.length == 0 || password.length == 0) {
-    //   return false;
-    // }
+    if ($scope.name == undefined || $scope.address == undefined || $scope.password == undefined) {
+      return false;
+    }
     var new_user = { 
       id : $scope.users.length+1,
       name : $scope.name,
       address : $scope.address,
-      email : $scope.email,
+      email : $scope.email == undefined ? "*** invalid email ***" : $scope.email,
       password : $scope.password
     }
+
     $scope.users.push(new_user);
+    $scope.name = '';
+    $scope.address = '';
+    $scope.email = '';
+    $scope.password = '';
   }
 
   $scope.deleteUser = function(user_id) {
-    console.log("user_id = " + user_id)
-    var index = $scope.users.indexOf(user_id)-1;
-    $scope.users.splice(index, 1);
+    $scope.users.forEach(function(item, index) {
+      if(item.id == user_id) {
+        $scope.users.splice(index, 1);
+      }
+    });
   }
 });
